@@ -258,7 +258,7 @@
                 <h2 class="slider-izq">Mesa de regalo</h2>
 
                 <div class="mesa-img slider-down">
-                    <img src="img/liverpool.png" alt="Formal">
+                    <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51462229"><img src="img/liverpool.png" alt="Formal"></a>
 
                 </div>
 
@@ -307,31 +307,19 @@
     </div>
 </section>
 
-            <!-- Sección de asistencia -->
-<section class="contenedor-ev hidden fade-in" id="section11">
-    <div class="cont-text-eve txt-co">
-        <h1 class="slider-up text-white no-shadow">Confirmación de asistencia</h1>
-        <form id="rsvp-form" action="https://api.whatsapp.com/send" method="get" target="_blank">
-            <div class="mb-3">
-                <label for="name" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="mb-3">
-                <label for="guests" class="form-label">Invitados:</label>
-                <input type="number" class="form-control" id="guests" name="guests" min="0" max="4" required>
-            </div>
-            
-            <div class="mb-3">
-                <label for="attendance" class="form-label">¿Podrás asistir?</label>
-                <select class="form-control" id="attendance" name="attendance" required>
-                    <option value="yes">Sí</option>
-                    <option value="no">No</option>
-                </select>
-            </div>
-            <button type="submit" class="btn-conf">Confirmar asistencia</button>
-        </form>
-    </div>
-</section>
+           <!-- Sección Confirmar Asistencia -->
+    <section class="contenedor principal" id="section-confirmar-asistencia">
+        <div class="texto-principal text-center">
+            <h1>Mis XV años - Tania Judith</h1>
+            <h2>26 de Octubre 2024</h2>
+            <br><br>
+            <!-- Botón para confirmar asistencia -->
+            <form id="rsvp-form">
+                <button type="submit" class="btn btn-lg btn-success">Confirmar asistencia</button>
+            </form>
+        </div>
+    </section>
+
 
    <!-- Footer -->
 <!-- Footer -->
@@ -349,7 +337,14 @@
 
     </div>
 </footer>
-
+            <script>
+                // Envío de confirmación de asistencia
+                document.getElementById("rsvp-form").addEventListener("submit", function(event) {
+                    event.preventDefault(); // Evita el envío tradicional del formulario
+                    const whatsappURL = `https://api.whatsapp.com/send?phone=6691107956&text=¡Hola Tania! Confirmo mi asistencia a tus XV años.`;
+                    window.open(whatsappURL, '_blank');
+                });
+            </script>
             <script src="js/script.js"></script>
             
 
